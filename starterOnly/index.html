@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <title>Reservation GameOn</title>
+  <title>Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="./css/modal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <!-- NavBar -->
   <div class="topnav" id="myTopnav">
     <div class="header-logo">
       <img alt="logo" src="./img/Logo.png" width="auto" height="auto" />
@@ -28,6 +29,8 @@
     </div>
   </div>
   </div>
+
+  <!-- Page Principale -->
   <main>
     <div class="hero-section">
       <div class="hero-content">
@@ -50,31 +53,40 @@
         je m'inscris
       </button>
     </div>
-    <!-- Début modal -->
+
+    <!-- Modale -->
     <div class="bground">
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
           <form name="reserve" action="./index.html" method="get" onsubmit="return validate();">
-            <div class="formData">
-              <label>Prénom</label><br>
+
+            <!-- Infos User -->
+            <div class="formData" data-error="false">
+              <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
+              <span class="errorMessage"></span>
             </div>
-            <div class="formData">
-              <label>Nom</label><br>
+            <div class="formData" data-error="false">
+              <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" /><br>
+              <span class="errorMessage"></span>
             </div>
-            <div class="formData">
-              <label>E-mail</label><br>
+            <div class="formData" data-error="false">
+              <label for="email">E-mail</label><br>
               <input class="text-control" type="email" id="email" name="email" /><br>
+              <span class="errorMessage"></span>
             </div>
-            <div class="formData">
-              <label>Date de naissance</label><br>
+            <div class="formData" data-error="false">
+              <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
             </div>
-            <div class="formData">
+
+            <!-- Infos Tournoi User -->
+            <div class="formData" data-error="false">
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <span class="errorMessage"></span>
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData">
@@ -104,6 +116,7 @@
                 Portland</label>
             </div>
 
+            <!-- Conditions Générales -->
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
               <label class="checkbox2-label" for="checkbox1" required>
@@ -118,12 +131,13 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+            <input class="btn-submit button" type="submit" value="C'est parti" />
           </form>
         </div>
       </div>
     </div>
   </main>
+
   <footer>
     <p class="copyrights">
       Copyright 2014 - 2022, GameOn Inc.
@@ -132,4 +146,6 @@
 </body>
 
 </html>
-<script src="./js/modal.js"></script>
+
+<!-- Scripts -->
+<script src="./js/modal.js" defer></script>

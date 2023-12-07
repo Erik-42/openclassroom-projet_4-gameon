@@ -11,7 +11,6 @@
 }
 
 /* Landing Page */
-
 body {
   margin: 0;
   display: flex;
@@ -73,50 +72,6 @@ img {
   display: none;
 }
 
-
-@media screen and (max-width: 768px) {
-  .topnav a {
-    display: none;
-  }
-
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {
-    position: relative;
-  }
-
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-
-
-@media screen and (max-width: 540px) {
-  .topnav a {
-    display: none;
-  }
-
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-}
-
 main {
   font-size: 130%;
   font-weight: bolder;
@@ -153,8 +108,50 @@ main {
   font-family: var(--font-slab);
 }
 
-/* Modal form */
+@media screen and (max-width: 768px) {
+  .topnav a {
+    display: none;
+  }
 
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+  }
+}
+
+
+/* Modal form */
 .button {
   background: #fe142f;
   margin-top: 0.5em;
@@ -248,12 +245,17 @@ input {
   border: 2px solid #e54858;
 }
 
+.errorMessage {
+  color: red;
+  background-color: yellow;
+  text-align: center;
+}
 
-input[data-error]::after {
+/* input[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: red;
-}
+} */
 
 .checkbox-label,
 .checkbox2-label {

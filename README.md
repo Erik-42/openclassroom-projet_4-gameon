@@ -1,5 +1,5 @@
 <div align="center">
-<p>Projet GameOn OpenClassRoom</p>
+<p>Projet OpenClassRoom</p>
 </div>
 <a name="readme-top"></a>
 

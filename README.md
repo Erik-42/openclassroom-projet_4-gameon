@@ -2,7 +2,6 @@
 <p>Projet OpenClassRoom</p>
 </div>
 <a name="readme-top"></a>
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -39,9 +38,9 @@
 
 Votre mission est de reprendre le projet de refonte du frontend commencer par un autre développeur et de le finir.
 
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
+1. Forkez ce repo.
+2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire.
+3. Il n'y a aucune dépendance.
 4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
 
 ## Built with
@@ -100,25 +99,25 @@ mesen.erik@gmail.com
 [wakatime-url]: https://wakatime.com/@f84d00d8-fee3-4ca3-803d-3daa3c7053a5
 [github badge-shield]: https://img.shields.io/badge/Github-Erik--42-155?style=for-the-badge&logo=github
 [github badge-url]: https://github.com/Erik-42
-[github repo-shield]: https://img.shields.io/badge/Repositories-33-blue
+[github repo-shield]: https://img.shields.io/badge/Repositories-34-blue
 [github repo-url]: https://github.com/Erik-42?tab=repositories
-[github repo file count (file type)-shield]: https://img.shields.io/github/directory-file-count/Erik-42/openclassrooms_projet_8
-[github repo file count (file type)-url]: https://github.com/directory-file-count/Erik-42/openclassrooms_projet_8
+[github repo file count (file type)-shield]: https://img.shields.io/github/directory-file-count/Erik-42/openclassroom-gameon
+[github repo file count (file type)-url]: https://github.com/directory-file-count/Erik-42/openclassroom-gameon
 [github followers-shield]: https://img.shields.io/github/followers/Erik-42
 [github followers-url]: https://github.com/followers/Erik-42
-[github all releases-shield]: https://img.shields.io/github/downloads/Erik-42/openclassrooms_projet_8/total
-[github all releases-url]: https://github.com/Erik-42/openclassrooms_projet_8/releases
-[github repo size-shield]: https://img.shields.io/github/repo-size/Erik-42/openclassrooms_projet_8
-[github repo size-url]: https://github.com/Erik-42/openclassrooms_projet_8
-[contributors-shield]: https://img.shields.io/github/contributors/Erik-42/openclassrooms_projet_8
-[contributors-url]: https://github.com/Erik-42/openclassrooms_projet_8/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Erik-42/openclassrooms_projet_8
-[forks-url]: https://github.com/Erik-42/openclassrooms_projet_8/forks
+[github all releases-shield]: https://img.shields.io/github/downloads/Erik-42/openclassroom-gameon/total
+[github all releases-url]: https://github.com/Erik-42/openclassroom-gameon/releases
+[github repo size-shield]: https://img.shields.io/github/repo-size/Erik-42/openclassroom-gameon
+[github repo size-url]: https://github.com/Erik-42/openclassroom-gameon
+[contributors-shield]: https://img.shields.io/github/contributors/Erik-42/openclassroom-gameon
+[contributors-url]: https://github.com/Erik-42/openclassroom-gameon/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Erik-42/openclassroom-gameon
+[forks-url]: https://github.com/Erik-42/openclassroom-gameon/forks
 [stars-shield]: https://img.shields.io/github/stars/Erik-42
 [stars-url]: https://github.com/Erik-42?tab=stars
-[issues-shield]: https://img.shields.io/github/issues-raw/Erik-42/openclassrooms_projet_8
-[issues-url]: https://github.com/Erik-42/openclassrooms_projet_8/issues
-[license-shield]: https://img.shields.io/github/license/Erik-42/openclassrooms_projet_8
+[issues-shield]: https://img.shields.io/github/issues-raw/Erik-42/openclassroom-gameon
+[issues-url]: https://github.com/Erik-42/openclassroom-gameon/issues
+[license-shield]: https://img.shields.io/github/license/Erik-42/openclassroom-gameon
 [license-url]: https://github.com/Erik-42/openclassrooms_projet_7/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/erik-mesen/

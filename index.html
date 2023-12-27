@@ -42,20 +42,17 @@
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
           aux réservations... Places limitées !
         </p>
-        <button class="btn-signup modal-btn">
-          je m'inscris
-        </button>
+        <button class="btn-signup modal-btn">Je m'inscris</button>
       </div>
       <div class="hero-img">
         <img src="./assets/img/bg_img.jpg" alt="img" />
       </div>
-      <button class="btn-signup modal-btn">
-        je m'inscris
-      </button>
+      <!-- bouton pour la version mobile -->
+      <button class="btn-signup modal-btn">Je m'inscris</button> 
     </div>
-
+</main>
     <!-- Modale -->
-    <div class="bground" >
+    <aside class="bground" >
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
@@ -81,7 +78,7 @@
 
             <!-- Infos Tournoi User -->
             <div class="formData">
-              <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+              <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
@@ -110,8 +107,8 @@
               <label class="checkbox-label" for="location6">
                 <span class="checkbox-icon"></span>
                 Portland</label>
+                <span class="radioErrorMessage"></span>
             </div>
-             <span class="radioErrorMessage" data-error-visible="false" data-error=""></span>
 
             <!-- Conditions Générales -->
             <div class="formData">
@@ -124,13 +121,14 @@
               <input class="checkbox-input" type="checkbox" id="checkbox1" />
               <label class="checkbox2-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>
-                J'ai lu et accepté les conditions d'utilisation.
+                J'ai lu et j'accepte les conditions d'utilisation.
               </label>
               <br>
             </div>
             <input class="btn-submit button" type="submit" value="C'est parti" />
           </form>
           
+         <!-- Modale validé -->
           <form id="formValid">
             <div  class="modal__validForm">
               <h4 class="vali">Merci ! Votre réservation a été reçue.</h4>
@@ -142,8 +140,7 @@
 
         </div>
       </div>
-    </div>
-  </main>
+    </aside>
 
   <footer>
     <p class="copyrights">

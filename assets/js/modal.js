@@ -26,23 +26,22 @@ function launchModal() {
 
 // Fermeture de la modale
 const closeModal = document.querySelector(".close"); //Capture de la croix
-closeModal.addEventListener("click", resetModal); //evenement clique sur la croix pour fermeture modale
+closeModal.addEventListener("click", resetModal); //Evenement clique sur la croix pour fermeture modale
 
 // Reset du formulaire
 function resetModal() {
-  clearAllErrors(); // On supprime toutes les erreurs
-  document.forms["reserve"].reset(); // On reset le formulaire
-  modalbg.style.display = "none"; // On rend invisible la modale
+  clearAllErrors(); // Suppression de toutes les erreurs
+  document.forms["reserve"].reset(); // Reset du formulaire
+  modalbg.style.display = "none"; // Rend modale invisible
 }
 
 // Suppression de toutes les erreurs
 function clearAllErrors() {
   const errorAllMessage = document.querySelectorAll("input"); // Sélection de tous les input
   errorAllMessage.forEach((msg) => {
-    msg.parentElement.setAttribute("data-error", false); // modif de l'attribut
+    msg.parentElement.setAttribute("data-error", false); // Modif de l'attribut
     msg.parentElement.setAttribute("data-error-visible", false); // Modif de l'attribut
     msg.textContent = ""; // Suppression des messages d'erreurs
-    clearRadioError();
   });
 }
 
@@ -51,16 +50,16 @@ function clearAllErrors() {
 const firstNameInput = document.getElementById("first"); //Capture champ prénom
 function checkFirstName() {
   const prenomRegex = /^[a-zA-Z]{2,}$/; // Condition pour au moins 2 caractères alphabétiques
+  // Test si le champ respect l'expression régulière
   if (!prenomRegex.test(firstNameInput.value.trim())) {
-    // en cas d'erreur ont ajoute un message
     addError(
       firstNameInput,
       "Entrer au moins 2 caractères alphabétiques pour le prénom."
-    );
+    ); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearError(firstNameInput);
-    return firstNameInput.value;
+    clearError(firstNameInput); // si la condition est remplie ont efface le message d'erreur
+    return firstNameInput.value; // ont retourne la valeur du champ
   }
 }
 
@@ -68,15 +67,16 @@ function checkFirstName() {
 const lastNameInput = document.getElementById("last"); // Capture champ nom
 function checkLastName() {
   const nomRegex = /^[a-zA-Z]{2,}$/; // Condition pour au moins 2 caractères alphabétiques
+  // Test si le champ respect l'expression régulière
   if (!nomRegex.test(lastNameInput.value.trim())) {
     addError(
       lastNameInput,
       "Entrer au moins 2 caractères alphabétiques pour le nom."
-    );
+    ); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearError(lastNameInput);
-    return lastNameInput.value;
+    clearError(lastNameInput); // si la condition est remplie ont efface le message d'erreur
+    return lastNameInput.value; // ont retourne la valeur du champ
   }
 }
 
@@ -84,29 +84,26 @@ function checkLastName() {
 const emailInput = document.getElementById("email"); //Capture champ email
 function checkEmail() {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Condition pour un email valide
+  // Test si le champ respect l'expression régulière
   if (!emailRegex.test(emailInput.value.trim())) {
-    addError(emailInput, "Veuillez entrer une adresse email valide.");
+    addError(emailInput, "Veuillez entrer une adresse email valide."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearError(emailInput);
-    return emailInput.value;
+    clearError(emailInput); // si la condition est remplie ont efface le message d'erreur
+    return emailInput.value; // ont retourne la valeur du champ
   }
 }
 
 // Test date de naissance
-const birthdateInput = document.getElementById("birthdate"); //Capture champ email
+const birthdateInput = document.getElementById("birthdate"); //Capture champ date anniversaire
 function checkBirthDate() {
-  // const birthDateRegex = /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/; // Condition pour un date valide
   // Test si la date est vide
   if (birthdateInput.value == "") {
-    addError(
-      birthdateInput,
-      "Veuillez entrer une date valide pour la date de naissance."
-    );
+    addError(birthdateInput, "Veuillez entrer une date de naissance valide."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearError(birthdateInput);
-    return birthdateInput.value;
+    clearError(birthdateInput); // si la condition est remplie ont efface le message d'erreur
+    return birthdateInput.value; // ont retourne la valeur du champ
   }
 }
 
@@ -114,62 +111,52 @@ function checkBirthDate() {
 const quantityInput = document.getElementById("quantity"); // Capture Quantité de tournois
 function checkQuantity() {
   const quantityRegex = /^[0-9]+$/; // Condition pour un nombre positif
+  // Test si le champ respect l'expression régulière
   if (!quantityRegex.test(quantityInput.value.trim())) {
     addError(
       quantityInput,
       "Veuillez entrer un nombre valide pour les tournois."
-    );
+    ); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearError(quantityInput);
-    return quantityInput.value;
+    clearError(quantityInput); // si la condition est remplie ont efface le message d'erreur
+    return quantityInput.value; // ont retourne la valeur du champ
   }
 }
 
 // Test de la localisation des tournois
 function checkLocation() {
-  // const radioErrorMessage = document.querySelector(".radioErrorMessage");
+  const radioErrorMessage = document.querySelector(".radioErrorMessage");
   const radioInput = document.querySelector('input[name="location"]:checked'); // Bouton radio qui est coché (=null s'il n'y en a pas)
 
   // test s'il y a un bouton radio de coché
   if (!radioInput) {
-    addRadioError();
+    addError(radioErrorMessage, "Veuillez choisir un tournoi."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearRadioError();
-    return radioInput.checked;
+    clearError(radioErrorMessage); // si la condition est remplie ont efface le message d'erreur
+    return radioInput.checked; // ont affiche le bouton validé
   }
 }
 
-function addRadioError() {
-  const radioErrorMessage = document.querySelector(".radioErrorMessage");
-  radioErrorMessage.parentElement.setAttribute("data-error", true);
-  radioErrorMessage.parentElement.setAttribute("data-error-visible", true);
-  radioErrorMessage.textContent = "Veuillez choisir un tournoi.";
-}
-function clearRadioError() {
-  const radioErrorMessage = document.querySelector(".radioErrorMessage");
-  radioErrorMessage.parentElement.setAttribute("data-error", false);
-  radioErrorMessage.parentElement.setAttribute("data-error-visible", false);
-  radioErrorMessage.textContent = "";
-}
-
 // Test condition d'utilisation
-const checkbox1Input = document.getElementById("checkbox1"); // Capture validation conditions d'utilisation
+const checkbox1Input = document.getElementById("checkbox1"); // Capture checkbox des conditions d'utilisation
 function checkCheckBox1() {
+  // test si le bouton est coché
   if (!checkbox1Input.checked) {
-    addError(checkbox1Input, "Veuillez accepter les conditions d'utilisation.");
+    addError(checkbox1Input, "Veuillez accepter les conditions d'utilisation."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearError(checkbox1Input);
-    return checkbox1Input.checked;
+    clearError(checkbox1Input); // si la condition est remplie ont efface le message d'erreur
+    return checkbox1Input.checked; // ont affiche le bouton validé
   }
 }
 
 // Test prevenir d'autres evenements
-const checkbox2Input = document.getElementById("checkbox2"); // Capture notification evenements
+const checkbox2Input = document.getElementById("checkbox2"); // Capture de la checkbox des notifications evenements
 function checkCheckBox2() {
   let valCheckbox2 = "NOT Checked"; // Valeur par défaut de checkbox2
+  // test si le bouton est coché
   if (document.querySelector('input[id="checkbox2"]:checked')) {
     valCheckbox2 = "Checked"; // On change la valeur
   }
@@ -177,26 +164,28 @@ function checkCheckBox2() {
 }
 
 // Gestion des erreurs //
-// Ajout des erreurs
+// Ajout des erreurs en recuperant l'input concerné et le message correspondant
 function addError(input, message) {
-  const formData = input.parentElement;
-  formData.setAttribute("data-error-visible", true);
-  formData.setAttribute("data-error", message);
+  const formData = input.parentElement; // Récupération du formData parent de l'input
+  formData.setAttribute("data-error-visible", true); // Ajout de l'attribut data-error-visible avec la valeur true au formData
+  formData.setAttribute("data-error", message); //Ajout de l'attribut data-error avec le message au formData
 }
 
 // Suppression des erreurs
+// Suppression des erreurs en recuperant l'input concerné
 function clearError(input) {
-  const formData = input.parentElement;
-  formData.setAttribute("data-error-visible", false);
+  const formData = input.parentElement; // Récupération du formData parent de l'input
+  formData.setAttribute("data-error-visible", false); //Modification de l'attribut data-error-visible du formData avec la valeur false
 }
 
 // Soumission du formulaire //
-const submitForm = document.querySelector('form[name="reserve"]');
-submitForm.addEventListener("submit", onSubmit);
+const submitForm = document.querySelector('form[name="reserve"]'); // Capture du formulaire avec son nom
+submitForm.addEventListener("submit", onSubmit); //Ecoute de l'évenement submit et déclenchement de la fonction onSubmit
 
 function onSubmit(event) {
-  event.preventDefault();
+  event.preventDefault(); //Blocage du fonctionnement par défaut de l'événement
 
+  //controle de la validiter des champs du formulaire
   let resultCheckInput = {
     firstname: checkFirstName(),
     lastname: checkLastName(),
@@ -207,11 +196,12 @@ function onSubmit(event) {
     checkbox1: checkCheckBox1(),
     checkbox2: checkCheckBox2(),
   };
-  modalValid();
+  modalValid(); //Déclenchement de la fonction modalValid
 }
 
-// validation du formulaire
+// Validation du formulaire
 function modalValid() {
+  //Vérification que toutes les conditions sont valident
   if (
     checkFirstName() &&
     checkLastName() &&
@@ -221,20 +211,19 @@ function modalValid() {
     checkLocation() &&
     checkCheckBox1()
   ) {
-    formValid.style.display = "block";
+    formValid.style.display = "block"; //Affichage du formulaire validé
   } else {
-    formValid.style.display = "none";
+    formValid.style.display = "none"; //Non Affichage du formulaire validé si les conditions sont invalides
   }
 }
 
-//Close modal valid BTN
-const formValid = document.getElementById("formValid");
-const btnCloseModalValid = document.querySelector(".btn__closeModal");
+//Close modal valid
+const formValid = document.getElementById("formValid"); //Capture du formulaire validé
+const btnCloseModalValid = document.querySelector(".btn__closeModal"); // Capture le bouton de fermeture du formulaire validé
 
-btnCloseModalValid.addEventListener("click", closeModalValid);
+btnCloseModalValid.addEventListener("click", closeModalValid); //Ecoute le click sur le bouton de fermeture et déclenchement de la fonction closeModalValid
 function closeModalValid() {
-  formValid.style.display = "none";
-  modalbg.style.display = "none";
-  /* reload for empty form */
-  document.location.reload();
+  formValid.style.display = "none"; //Effacement du formulaire validé
+  modalbg.style.display = "none"; //Effacement de la modale
+  resetModal(); //Reset de tous les champs du formulaire d'inscription
 }

@@ -587,3 +587,38 @@ footer {
     opacity: 1;
   }
 }
+
+/* formulaire valide */
+#formValid {
+  display: none;
+}
+.modal__validForm {
+  position: relative;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+}
+.btn__closeModal {
+  position: absolute;
+  font-size: 100%;
+  background: #fe142f;
+  display: flex;
+  margin: auto;
+  padding: 2em;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  bottom: 50px;
+  right: 35%;
+  outline: 0;
+  border: 0;
+}

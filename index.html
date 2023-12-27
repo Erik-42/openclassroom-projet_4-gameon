@@ -55,11 +55,11 @@
     </div>
 
     <!-- Modale -->
-    <div class="bground" style="display: block;">
+    <div class="bground" >
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form name="reserve" action="./index.html" method="get" onsubmit="return validate();">
+          <form name="reserve" action="./index.html" method="get" >
 
             <!-- Infos User -->
             <div class="formData">
@@ -111,7 +111,7 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
-             <span class="radioErrorMessage"></span>
+             <span class="radioErrorMessage" data-error-visible="false" data-error=""></span>
 
             <!-- Conditions Générales -->
             <div class="formData">
@@ -130,15 +130,16 @@
             </div>
             <input class="btn-submit button" type="submit" value="C'est parti" />
           </form>
-          <div id="formValid">
+          
+          <form id="formValid">
             <div  class="modal__validForm">
-              <span class="close" onclick="closeModal()"></span>
               <h4 class="vali">Merci ! Votre réservation a été reçue.</h4>
               <button class="btn__closeModal" >
                 Fermer
               </button>
             </div>
-          </div>
+        </form>
+
         </div>
       </div>
     </div>

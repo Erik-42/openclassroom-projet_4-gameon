@@ -41,6 +41,9 @@ closeModal.addEventListener("click", modalClose); //evenement clique pour fermet
 
 function modalClose() {
   modalbg.style.display = "none"; // cache modale
+
+  formIsValid.style.display = "none";
+
   clearError(); // Vide les erreurs du formulaire
   firstNameInput.value = "";
   lastNameInput.value = "";
@@ -97,7 +100,7 @@ function checkEmail() {
 function checkBirthDate() {
   // const birthDateRegex = /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/; // Condition pour un date valide
   // Test si la date est vide
-  if (!birthdateInput.type !== "date") {
+  if (birthdateInput.value == "") {
     addError(
       birthdateInput,
       "Veuillez entrer une date valide pour la date de naissance."
@@ -134,17 +137,19 @@ function checkLocation() {
     // addError(radioInput, "Veuillez choisir un tournoi.");
 
     radioErrorMessage.parentElement.setAttribute("data-error", true);
+    radioErrorMessage.parentElement.setAttribute("data-error-visible", true);
     radioErrorMessage.textContent = "Veuillez choisir un tournoi.";
     return false;
   } else {
-    // radioErrorMessage.parentElement.setAttribute("data-error", false);
-    // radioErrorMessage.textContent = "";
+    radioErrorMessage.parentElement.setAttribute("data-error", false);
+    radioErrorMessage.parentElement.setAttribute("data-error-visible", false);
+    radioErrorMessage.textContent = "";
     clearError(radioInput);
     return radioInput.value;
   }
 }
 
-function checkCheckbox1() {
+function checkCheckBox1() {
   if (!checkbox1Input.checked) {
     addError(checkbox1Input, "Veuillez accepter les conditions d'utilisation.");
     return false;
@@ -187,51 +192,42 @@ submitForm.addEventListener("submit", onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
-  const resultObject = {
+
+  let resultCheckInput = {
     firstname: checkFirstName(),
     lastname: checkLastName(),
     email: checkEmail(),
+    birthdate: checkBirthDate(),
     quantity: checkQuantity(),
     location: checkLocation(),
     checkbox1: checkCheckBox1(),
     checkbox2: checkCheckBox2(),
   };
 }
-
-formSubmitBtn.addEventListener("click", ($event) => {
-  $event.preventDefault();
-
+function modalValid() {
   if (
     checkFirstName() &&
     checkLastName() &&
     checkEmail() &&
-    validateBirthdate() &&
+    checkBirthDate() &&
     checkQuantity() &&
     checkLocation() &&
     checkCheckBox1()
   ) {
-    submitSuccess_message.style.display = "block";
-    setTimeout(showSuccessScreen, 2000);
+    formValid.style.display = "block";
+  } else {
+    formValid.style.display = "none";
   }
-});
+}
 
-// Make the success screen setup and appear
-function showSuccessScreen() {
-  let testHeight = form_screen.clientHeight;
-  let newHeight = testHeight.toString() + "px";
-  success_screen.style.minHeight = newHeight;
-  form_screen.style.display = "none";
-  success_screen.style.display = "flex";
-  success_screen.style.flexDirection = "column";
-  success_screen.style.justifyContent = "space-between";
+//Close modal valid BTN
+const formValid = document.getElementById("formValid");
+const btnCloseModalValid = document.querySelector(".btn__closeModal");
 
-  formFirst.value = "";
-  formLast.value = "";
-  formEmail.value = "";
-  formBirthdate.value = "";
-  formQuantity.value = "";
-  for (let i = 0; i < formLocation.length; i++) {
-    formLocation[i].checked = false;
-  }
-  formCheckbox2.checked = false;
+btnCloseModalFormIsValid.addEventListener("click", closeModalValid);
+function closeModalValid() {
+  formValid.style.display = "none";
+  modalbg.style.display = "none";
+  /* reload for empty form */
+  document.location.reload();
 }

@@ -219,7 +219,7 @@ function modalValid() {
 
 //Close modal valid
 const formValid = document.getElementById("formValid"); //Capture du formulaire validé
-const btnCloseModalValid = document.querySelector(".btn__closeModal"); // Capture le bouton de fermeture du formulaire validé
+const btnCloseModalValid = document.querySelector(".btnCloseModal"); // Capture le bouton de fermeture du formulaire validé
 
 btnCloseModalValid.addEventListener("click", closeModalValid); //Ecoute le click sur le bouton de fermeture et déclenchement de la fonction closeModalValid
 function closeModalValid() {

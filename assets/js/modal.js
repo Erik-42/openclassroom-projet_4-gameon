@@ -9,15 +9,10 @@ function editNav() {
   }
 }
 
-// DOM Elements landing page //
-const modalbg = document.querySelector(".bground"); //Capture de la modale
-const modalBtn = document.querySelectorAll(".modal-btn"); //Capture des boutons
-const formData = document.querySelectorAll(".formData"); //Capture des éléments du formulaire
-
-// DOM Elements Modale
-
 // Gestion de la modale //
 //ouverture modale
+const modalbg = document.querySelector(".bground"); //Capture de la modale
+const modalBtn = document.querySelectorAll(".btn-signup"); //Capture des boutons
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal)); // launch modal event
 
 function launchModal() {
@@ -52,10 +47,7 @@ function checkFirstName() {
   const prenomRegex = /^[a-zA-Z]{2,}$/; // Condition pour au moins 2 caractères alphabétiques
   // Test si le champ respect l'expression régulière
   if (!prenomRegex.test(firstNameInput.value.trim())) {
-    addError(
-      firstNameInput,
-      "Entrer au moins 2 caractères alphabétiques pour le prénom."
-    ); // en cas d'erreur ont ajoute le message
+    addError(firstNameInput, "Entrez au moins 2 caractères pour le prénom."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
     clearError(firstNameInput); // si la condition est remplie ont efface le message d'erreur
@@ -69,10 +61,7 @@ function checkLastName() {
   const nomRegex = /^[a-zA-Z]{2,}$/; // Condition pour au moins 2 caractères alphabétiques
   // Test si le champ respect l'expression régulière
   if (!nomRegex.test(lastNameInput.value.trim())) {
-    addError(
-      lastNameInput,
-      "Entrer au moins 2 caractères alphabétiques pour le nom."
-    ); // en cas d'erreur ont ajoute le message
+    addError(lastNameInput, "Entrez au moins 2 caractères pour le nom."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
     clearError(lastNameInput); // si la condition est remplie ont efface le message d'erreur
@@ -86,7 +75,7 @@ function checkEmail() {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Condition pour un email valide
   // Test si le champ respect l'expression régulière
   if (!emailRegex.test(emailInput.value.trim())) {
-    addError(emailInput, "Veuillez entrer une adresse email valide."); // en cas d'erreur ont ajoute le message
+    addError(emailInput, "Entrez une adresse email valide."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
     clearError(emailInput); // si la condition est remplie ont efface le message d'erreur
@@ -99,7 +88,7 @@ const birthdateInput = document.getElementById("birthdate"); //Capture champ dat
 function checkBirthDate() {
   // Test si la date est vide
   if (birthdateInput.value == "") {
-    addError(birthdateInput, "Veuillez entrer une date de naissance valide."); // en cas d'erreur ont ajoute le message
+    addError(birthdateInput, "Entrez une date de naissance valide."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
     clearError(birthdateInput); // si la condition est remplie ont efface le message d'erreur
@@ -113,10 +102,7 @@ function checkQuantity() {
   const quantityRegex = /^[0-9]+$/; // Condition pour un nombre positif
   // Test si le champ respect l'expression régulière
   if (!quantityRegex.test(quantityInput.value.trim())) {
-    addError(
-      quantityInput,
-      "Veuillez entrer un nombre valide pour les tournois."
-    ); // en cas d'erreur ont ajoute le message
+    addError(quantityInput, "Entrez un nombre valide pour les tournois."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
     clearError(quantityInput); // si la condition est remplie ont efface le message d'erreur
@@ -131,7 +117,7 @@ function checkLocation() {
 
   // test s'il y a un bouton radio de coché
   if (!radioInput) {
-    addError(radioErrorMessage, "Veuillez choisir un tournoi."); // en cas d'erreur ont ajoute le message
+    addError(radioErrorMessage, "Choisissez un tournoi."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
     clearError(radioErrorMessage); // si la condition est remplie ont efface le message d'erreur
@@ -144,7 +130,7 @@ const checkbox1Input = document.getElementById("checkbox1"); // Capture checkbox
 function checkCheckBox1() {
   // test si le bouton est coché
   if (!checkbox1Input.checked) {
-    addError(checkbox1Input, "Veuillez accepter les conditions d'utilisation."); // en cas d'erreur ont ajoute le message
+    addError(checkbox1Input, "Merci d'accepter les conditions d'utilisation."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
     clearError(checkbox1Input); // si la condition est remplie ont efface le message d'erreur
@@ -164,6 +150,8 @@ function checkCheckBox2() {
 }
 
 // Gestion des erreurs //
+const formData = document.querySelectorAll(".formData"); //Capture des éléments du formulaire
+
 // Ajout des erreurs en recuperant l'input concerné et le message correspondant
 function addError(input, message) {
   const formData = input.parentElement; // Récupération du formData parent de l'input
@@ -219,7 +207,7 @@ function modalValid() {
 
 //Close modal valid
 const formValid = document.getElementById("formValid"); //Capture du formulaire validé
-const btnCloseModalValid = document.querySelector(".btnCloseModal"); // Capture le bouton de fermeture du formulaire validé
+const btnCloseModalValid = document.querySelector(".btn-closeModal"); // Capture le bouton de fermeture du formulaire validé
 
 btnCloseModalValid.addEventListener("click", closeModalValid); //Ecoute le click sur le bouton de fermeture et déclenchement de la fonction closeModalValid
 function closeModalValid() {

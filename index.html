@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <title>Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="./assets/css/modal.css" />
+  <!-- <link rel="stylesheet" href="./assets/css/modal.css" /> -->
+    <link rel="stylesheet" href="./public/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
 </head>
@@ -18,8 +19,8 @@
     </div>
     <div class="main-navbar">
 
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
+      <!-- <a href="#" class="active"><span>Accueil</span></a> -->
+      <a href="#" class="active"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
       <a href="#"><span>Évènements passés</span></a>
@@ -42,13 +43,13 @@
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
           aux réservations... Places limitées !
         </p>
-        <button class="btn-signup modal-btn">Je m'inscris</button>
+        <button class="btn-signup">Je M'inscris</button>
       </div>
       <div class="hero-img">
         <img src="./assets/img/bg_img.jpg" alt="img" />
       </div>
       <!-- bouton pour la version mobile -->
-      <button class="btn-signup modal-btn">Je m'inscris</button> 
+      <button class="btn-signup">Je M'inscris</button> 
     </div>
 </main>
     <!-- Modale -->
@@ -81,8 +82,9 @@
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
             </div>
-            <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
+           
             <div class="formData">
+                <label for="location">A quel tournoi souhaitez-vous participer cette année ?</label>
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
@@ -125,14 +127,14 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit button" type="submit" value="C'est parti" />
+            <button class="btn-submit" type="submit">C'est parti</button>
           </form>
           
          <!-- Modale validé -->
           <form id="formValid">
             <div  class="modalValidForm">
               <h4 class="valid">Merci ! Votre réservation a été enregistrée.</h4>
-              <button class="btnCloseModal" >
+              <button class="btn-closeModal" >
                 Fermer
               </button>
             </div>

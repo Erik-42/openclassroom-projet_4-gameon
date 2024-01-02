@@ -112,16 +112,18 @@ function checkQuantity() {
 
 // Test de la localisation des tournois
 function checkLocation() {
-  const radioErrorMessage = document.querySelector(".radioErrorMessage");
-  const radioInput = document.querySelector('input[name="location"]:checked'); // Bouton radio qui est coché (=null s'il n'y en a pas)
+  const radioInput = document.querySelector('input[name="location"]');
+  const radioInputChecked = document.querySelector(
+    'input[name="location"]:checked'
+  ); // Bouton radio qui est coché (=null s'il n'y en a pas)
 
   // test s'il y a un bouton radio de coché
-  if (!radioInput) {
-    addError(radioErrorMessage, "Choisissez un tournoi."); // en cas d'erreur ont ajoute le message
+  if (!radioInputChecked) {
+    addError(radioInput, "Choisissez un tournoi."); // en cas d'erreur ont ajoute le message
     return false;
   } else {
-    clearError(radioErrorMessage); // si la condition est remplie ont efface le message d'erreur
-    return radioInput.checked; // ont affiche le bouton validé
+    clearError(radioInput); // si la condition est remplie ont efface le message d'erreur
+    return radioInputChecked.checked; // ont affiche le bouton validé
   }
 }
 

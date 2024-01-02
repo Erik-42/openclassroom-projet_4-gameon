@@ -1,78 +1,124 @@
-/* BreakPoint Mobile Menu max 768px */
-@media screen and (max-width: 768px) {
-  .topnav a {
-    display: none;
-  }
+//
 
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-
-  body {
-    overflow: scroll;
-  }
-  .topnav.responsive {
-    position: relative;
-  }
-
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-/* BreakPoint Mobile */
 @media screen and (max-width: 800px) {
   .hero-section {
-    display: block;
-    box-shadow: unset;
+    // display: block;
+    // box-shadow: unset;
+    display: flex;
+    flex-direction: column;
   }
-
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 0px;
+    // padding: 20px;
+    width: 100%;
+    padding: 3.25rem 0;
   }
-
   .hero-content::after {
     content: unset;
   }
-
   .hero-content .btn-signup {
     display: none;
   }
-
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 5rem;
     white-space: normal;
   }
-
   .hero-text {
-    width: unset;
+    width: 100%;
+    margin-top: 20px;
     font-size: 1.5rem;
   }
-
   .hero-img img {
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
-
   .hero-section > .btn-signup {
     display: block;
     margin: 32px auto 10px;
     padding: 12px 35px;
   }
+  .copyrights {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  a.icon {
+    color: red;
+  }
+  a.icon:hover {
+    background-color: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .hero-headline {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .hero-headline {
+    font-size: 3rem;
+  }
+  .hero-text {
+    width: 90%;
+    font-size: 1rem;
+  }
+  .hero-content {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  /* .topnav a {
+    display: none;
+  } */
+  /* .topnav a.icon {
+    float: right;
+    display: block;
+  } */
+
+  .header-logo {
+    margin-top: 0.7rem;
+    margin-left: 0.7rem;
+  }
+
+  .header-logo img {
+    max-height: 1.5rem;
+  }
+}
+@media screen and (max-width: 390px) {
+  .hero-headline {
+    font-size: 2.1rem;
+  }
+  .hero-text {
+    word-wrap: break-word;
+    font-size: 0.9rem;
+  }
 
   .copyrights {
-    margin-top: 50px;
+    margin-top: 0px;
     text-align: center;
+    font-size: 0.9rem;
   }
 }

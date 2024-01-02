@@ -1,5 +1,44 @@
 @charset "UTF-8";
-/* BreakPoint Mobile Menu max 768px */
+@media screen and (max-width: 800px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-content {
+    background: #fff;
+    color: #000;
+    width: 100%;
+    padding: 3.25rem 0;
+  }
+  .hero-content::after {
+    content: unset;
+  }
+  .hero-content .btn-signup {
+    display: none;
+  }
+  .hero-headline {
+    font-size: 5rem;
+    white-space: normal;
+  }
+  .hero-text {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+  .hero-img img {
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  .hero-section > .btn-signup {
+    display: block;
+    margin: 32px auto 10px;
+    padding: 12px 35px;
+  }
+  .copyrights {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
 @media screen and (max-width: 768px) {
   .topnav a {
     display: none;
@@ -7,9 +46,6 @@
   .topnav a.icon {
     float: right;
     display: block;
-  }
-  body {
-    overflow: scroll;
   }
   .topnav.responsive {
     position: relative;
@@ -24,44 +60,58 @@
     display: block;
     text-align: left;
   }
+  a.icon {
+    color: red;
+  }
+  a.icon:hover {
+    background-color: none;
+  }
 }
-/* BreakPoint Mobile */
-@media screen and (max-width: 800px) {
-  .hero-section {
-    display: block;
-    box-shadow: unset;
-  }
-  .hero-content {
-    background: #fff;
-    color: #000;
-    padding: 0px;
-  }
-  .hero-content::after {
-    content: unset;
-  }
-  .hero-content .btn-signup {
-    display: none;
-  }
+@media screen and (max-width: 650px) {
   .hero-headline {
-    font-size: 4.5rem;
-    white-space: normal;
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .hero-headline {
+    font-size: 3rem;
   }
   .hero-text {
-    width: unset;
-    font-size: 1.5rem;
+    width: 90%;
+    font-size: 1rem;
   }
-  .hero-img img {
-    border-radius: 10px;
-    margin-top: 40px;
+  .hero-content {
+    min-width: 100%;
   }
-  .hero-section > .btn-signup {
+}
+@media screen and (max-width: 540px) {
+  /* .topnav a {
+    display: none;
+  } */
+  /* .topnav a.icon {
+    float: right;
     display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
+  } */
+  .header-logo {
+    margin-top: 0.7rem;
+    margin-left: 0.7rem;
+  }
+  .header-logo img {
+    max-height: 1.5rem;
+  }
+}
+@media screen and (max-width: 390px) {
+  .hero-headline {
+    font-size: 2.1rem;
+  }
+  .hero-text {
+    word-wrap: break-word;
+    font-size: 0.9rem;
   }
   .copyrights {
-    margin-top: 50px;
+    margin-top: 0px;
     text-align: center;
+    font-size: 0.9rem;
   }
 }
 /* Footer */
@@ -94,33 +144,29 @@ main {
 /* Section Principale */
 .hero-section {
   border-radius: 0.5rem;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 0.75rem 0.75rem 0 rgba(0, 0, 0, 0.25);
   margin: 1rem 0;
-}
-
-.hero-content > * {
-  position: relative;
-  z-index: 1;
+  display: flex;
+  align-items: stretch;
 }
 
 .hero-content {
-  padding: 3.25rem 4.25rem;
-  grid-column: span 4;
+  padding: 3.25rem 2rem 4.25rem 3.25rem;
   background: #232323;
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 40%;
 }
 
 .hero-content::after {
   content: "";
   width: 100%;
   height: 100%;
-  background: #232323;
   position: absolute;
   right: -80px;
   top: 0;
@@ -129,23 +175,21 @@ main {
 .hero-headline {
   font-size: 6rem;
   font-weight: normal;
-  white-space: nowrap;
+  width: 300%;
 }
 
 .hero-text {
-  width: 146%;
   font-weight: normal;
   margin-top: 3.25rem;
   padding: 0;
 }
 
 .hero-img {
-  grid-column: span 8;
+  display: contents;
 }
 
 .hero-img img {
   width: 100%;
-  height: 100%;
   display: block;
   padding: 0;
 }
@@ -172,7 +216,7 @@ main {
 }
 
 .content {
-  margin: 8rem auto;
+  margin: 7rem auto;
   width: 100%;
   max-width: 33.5rem;
   animation-name: modalopen;
@@ -315,7 +359,7 @@ input {
 .topnav a:hover {
   background-color: #fe142f;
   color: #ffffff;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   text-decoration: underline;
 }
 

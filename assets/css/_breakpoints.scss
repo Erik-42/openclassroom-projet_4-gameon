@@ -44,6 +44,11 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .hero-headline {
+    font-size: 4rem;
+    white-space: normal;
+    width: 100%;
+  }
   .topnav a {
     display: none;
   }

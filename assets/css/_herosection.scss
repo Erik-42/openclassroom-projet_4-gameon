@@ -69,9 +69,10 @@ main {
 
 .hero-img img {
   width: 100%;
+  object-fit: cover;
   // height: 100%;
-  display: block;
-  padding: 0;
+  // display: block;
+  // padding: 0;
 }
 // .modal-btn {
 //   font-size: 145%;

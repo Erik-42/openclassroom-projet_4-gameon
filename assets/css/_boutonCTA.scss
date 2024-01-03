@@ -3,7 +3,6 @@
 .btn-closeModal {
   background: #fe142f;
   display: block;
-  // margin: 0 auto;
   border-radius: 0.5rem;
   font-size: 1rem;
   padding: 0.75rem 5.25rem;
@@ -11,6 +10,9 @@
   cursor: pointer;
   border: 0;
   outline: 0;
+  &:hover{
+     background: #3876ac;
+  }
 }
 .btn-signup {
   outline: none;
@@ -22,13 +24,8 @@
 }
 .btn-closeModal {
   position: absolute;
-  bottom: 50px;
+  bottom: 5rem;
 }
 .hero-section > .btn-signup {
   display: none;
-}
-.btn-signup:hover,
-.btn-submit:hover,
-.btn-closeModal:hover {
-  background: #3876ac;
 }

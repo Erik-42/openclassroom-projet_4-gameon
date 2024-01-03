@@ -11,17 +11,17 @@ function editNav() {
 
 // Gestion de la modale //
 //ouverture modale
-const modalbg = document.querySelector(".bground"); //Capture de la modale
-const modalBtn = document.querySelectorAll(".btn-signup"); //Capture des boutons
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal)); // launch modal event
+const modalbg = document.querySelector(".bground"); 
+const modalBtn = document.querySelectorAll(".btn-signup"); 
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal)); 
 
 function launchModal() {
-  modalbg.style.display = "block"; // launch modal form
+  modalbg.style.display = "block"; 
 }
 
 // Fermeture de la modale
-const closeModal = document.querySelector(".close"); //Capture de la croix
-closeModal.addEventListener("click", resetModal); //Evenement clique sur la croix pour fermeture modale
+const closeModal = document.querySelector(".close"); 
+closeModal.addEventListener("click", resetModal); 
 
 // Reset du formulaire
 function resetModal() {
@@ -32,81 +32,81 @@ function resetModal() {
 
 // Suppression de toutes les erreurs
 function clearAllErrors() {
-  const errorAllMessage = document.querySelectorAll("input"); // Sélection de tous les input
+  const errorAllMessage = document.querySelectorAll("input"); 
   errorAllMessage.forEach((msg) => {
-    msg.parentElement.setAttribute("data-error", false); // Modif de l'attribut
-    msg.parentElement.setAttribute("data-error-visible", false); // Modif de l'attribut
-    msg.textContent = ""; // Suppression des messages d'erreurs
+    msg.parentElement.setAttribute("data-error", false); 
+    msg.parentElement.setAttribute("data-error-visible", false); 
+    msg.textContent = "";
   });
 }
 
 // Tests des champs //
 // Test du prénom
-const firstNameInput = document.getElementById("first"); //Capture champ prénom
+const firstNameInput = document.getElementById("first"); 
 function checkFirstName() {
   const prenomRegex = /^[a-zA-Z]{2,}$/; // Condition pour au moins 2 caractères alphabétiques
-  // Test si le champ respect l'expression régulière
+  
   if (!prenomRegex.test(firstNameInput.value.trim())) {
-    addError(firstNameInput, "Entrez au moins 2 caractères pour le prénom."); // en cas d'erreur ont ajoute le message
+    addError(firstNameInput, "Entrez au moins 2 caractères pour le prénom."); 
     return false;
   } else {
-    clearError(firstNameInput); // si la condition est remplie ont efface le message d'erreur
-    return firstNameInput.value; // ont retourne la valeur du champ
+    clearError(firstNameInput);
+    return firstNameInput.value; 
   }
 }
 
 // Test du Nom
-const lastNameInput = document.getElementById("last"); // Capture champ nom
+const lastNameInput = document.getElementById("last"); 
 function checkLastName() {
   const nomRegex = /^[a-zA-Z]{2,}$/; // Condition pour au moins 2 caractères alphabétiques
-  // Test si le champ respect l'expression régulière
+  
   if (!nomRegex.test(lastNameInput.value.trim())) {
-    addError(lastNameInput, "Entrez au moins 2 caractères pour le nom."); // en cas d'erreur ont ajoute le message
+    addError(lastNameInput, "Entrez au moins 2 caractères pour le nom."); 
     return false;
   } else {
-    clearError(lastNameInput); // si la condition est remplie ont efface le message d'erreur
-    return lastNameInput.value; // ont retourne la valeur du champ
+    clearError(lastNameInput); 
+    return lastNameInput.value; 
   }
 }
 
 // Test email
-const emailInput = document.getElementById("email"); //Capture champ email
+const emailInput = document.getElementById("email"); 
 function checkEmail() {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Condition pour un email valide
-  // Test si le champ respect l'expression régulière
+  
   if (!emailRegex.test(emailInput.value.trim())) {
-    addError(emailInput, "Entrez une adresse email valide."); // en cas d'erreur ont ajoute le message
+    addError(emailInput, "Entrez une adresse email valide."); 
     return false;
   } else {
-    clearError(emailInput); // si la condition est remplie ont efface le message d'erreur
-    return emailInput.value; // ont retourne la valeur du champ
+    clearError(emailInput); 
+    return emailInput.value; 
   }
 }
 
 // Test date de naissance
-const birthdateInput = document.getElementById("birthdate"); //Capture champ date anniversaire
+const birthdateInput = document.getElementById("birthdate"); 
 function checkBirthDate() {
   // Test si la date est vide
   if (birthdateInput.value == "") {
-    addError(birthdateInput, "Entrez une date de naissance valide."); // en cas d'erreur ont ajoute le message
+    addError(birthdateInput, "Entrez une date de naissance valide."); 
     return false;
   } else {
-    clearError(birthdateInput); // si la condition est remplie ont efface le message d'erreur
-    return birthdateInput.value; // ont retourne la valeur du champ
+    clearError(birthdateInput); 
+    return birthdateInput.value; 
   }
 }
 
 // Test nombre de tournois de l'utilisateur
-const quantityInput = document.getElementById("quantity"); // Capture Quantité de tournois
+const quantityInput = document.getElementById("quantity"); 
 function checkQuantity() {
   const quantityRegex = /^[0-9]+$/; // Condition pour un nombre positif
-  // Test si le champ respect l'expression régulière
+  
   if (!quantityRegex.test(quantityInput.value.trim())) {
-    addError(quantityInput, "Entrez un nombre valide pour les tournois."); // en cas d'erreur ont ajoute le message
+    addError(quantityInput, "Entrez un nombre valide pour les tournois."); 
     return false;
   } else {
-    clearError(quantityInput); // si la condition est remplie ont efface le message d'erreur
-    return quantityInput.value; // ont retourne la valeur du champ
+    clearError(quantityInput); 
+    return quantityInput.value;
   }
 }
 
@@ -117,63 +117,61 @@ function checkLocation() {
     'input[name="location"]:checked'
   ); // Bouton radio qui est coché (=null s'il n'y en a pas)
 
-  // test s'il y a un bouton radio de coché
   if (!radioInputChecked) {
-    addError(radioInput, "Choisissez un tournoi."); // en cas d'erreur ont ajoute le message
+    addError(radioInput, "Choisissez un tournoi."); 
     return false;
   } else {
-    clearError(radioInput); // si la condition est remplie ont efface le message d'erreur
-    return radioInputChecked.checked; // ont affiche le bouton validé
+    clearError(radioInput); 
+    return radioInputChecked.checked;
   }
 }
 
 // Test condition d'utilisation
-const checkbox1Input = document.getElementById("checkbox1"); // Capture checkbox des conditions d'utilisation
+const checkbox1Input = document.getElementById("checkbox1"); 
 function checkCheckBox1() {
-  // test si le bouton est coché
+  
   if (!checkbox1Input.checked) {
-    addError(checkbox1Input, "Merci d'accepter les conditions d'utilisation."); // en cas d'erreur ont ajoute le message
+    addError(checkbox1Input, "Merci d'accepter les conditions d'utilisation."); 
     return false;
   } else {
-    clearError(checkbox1Input); // si la condition est remplie ont efface le message d'erreur
-    return checkbox1Input.checked; // ont affiche le bouton validé
+    clearError(checkbox1Input); 
+    return checkbox1Input.checked; 
   }
 }
 
 // Test prevenir d'autres evenements
-const checkbox2Input = document.getElementById("checkbox2"); // Capture de la checkbox des notifications evenements
+const checkbox2Input = document.getElementById("checkbox2"); 
 function checkCheckBox2() {
   let valCheckbox2 = "NOT Checked"; // Valeur par défaut de checkbox2
-  // test si le bouton est coché
+  
   if (document.querySelector('input[id="checkbox2"]:checked')) {
     valCheckbox2 = "Checked"; // On change la valeur
   }
-  return valCheckbox2; // On retourne la valeur
+  return valCheckbox2; 
 }
 
 // Gestion des erreurs //
-const formData = document.querySelectorAll(".formData"); //Capture des éléments du formulaire
+const formData = document.querySelectorAll(".formData"); 
 
 // Ajout des erreurs en recuperant l'input concerné et le message correspondant
 function addError(input, message) {
-  const formData = input.parentElement; // Récupération du formData parent de l'input
-  formData.setAttribute("data-error-visible", true); // Ajout de l'attribut data-error-visible avec la valeur true au formData
+  const formData = input.parentElement; 
+  formData.setAttribute("data-error-visible", true); 
   formData.setAttribute("data-error", message); //Ajout de l'attribut data-error avec le message au formData
 }
 
-// Suppression des erreurs
 // Suppression des erreurs en recuperant l'input concerné
 function clearError(input) {
-  const formData = input.parentElement; // Récupération du formData parent de l'input
-  formData.setAttribute("data-error-visible", false); //Modification de l'attribut data-error-visible du formData avec la valeur false
+  const formData = input.parentElement; 
+  formData.setAttribute("data-error-visible", false); 
 }
 
 // Soumission du formulaire //
-const submitForm = document.querySelector('form[name="reserve"]'); // Capture du formulaire avec son nom
-submitForm.addEventListener("submit", onSubmit); //Ecoute de l'évenement submit et déclenchement de la fonction onSubmit
+const submitForm = document.querySelector('form[name="reserve"]'); 
+submitForm.addEventListener("submit", onSubmit); 
 
 function onSubmit(event) {
-  event.preventDefault(); //Blocage du fonctionnement par défaut de l'événement
+  event.preventDefault(); 
 
   //controle de la validiter des champs du formulaire
   let resultCheckInput = {
@@ -186,7 +184,7 @@ function onSubmit(event) {
     checkbox1: checkCheckBox1(),
     checkbox2: checkCheckBox2(),
   };
-  modalValid(); //Déclenchement de la fonction modalValid
+  modalValid(); //Déclenchement de la fonction modalValid si tous les champs sont remplis
 }
 
 // Validation du formulaire

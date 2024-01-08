@@ -173,8 +173,8 @@ submitForm.addEventListener("submit", onSubmit);
 function onSubmit(event) {
   event.preventDefault(); 
 
-  //controle de la validiter des champs du formulaire
-  let resultCheckInput = {
+  //controle de la validiter des champs des champs du formulaire individuellement
+  resultCheckInput = {
     firstname: checkFirstName(),
     lastname: checkLastName(),
     email: checkEmail(),
@@ -184,12 +184,8 @@ function onSubmit(event) {
     checkbox1: checkCheckBox1(),
     checkbox2: checkCheckBox2(),
   };
-  modalValid(); //Déclenchement de la fonction modalValid si tous les champs sont remplis
-}
-
-// Validation du formulaire
-function modalValid() {
-  //Vérification que toutes les conditions sont valident
+  
+ // Controle si tous les champs sont valide
   if (
     checkFirstName() &&
     checkLastName() &&
@@ -199,17 +195,17 @@ function modalValid() {
     checkLocation() &&
     checkCheckBox1()
   ) {
-    formValid.style.display = "block"; //Affichage du formulaire validé
+    formValid.style.display = "block"; 
   } else {
-    formValid.style.display = "none"; //Non Affichage du formulaire validé si les conditions sont invalides
+    formValid.style.display = "none"; 
   }
 }
 
 //Close modal valid
-const formValid = document.getElementById("formValid"); //Capture du formulaire validé
-const btnCloseModalValid = document.querySelector(".btn-closeModal"); // Capture le bouton de fermeture du formulaire validé
+const formValid = document.getElementById("formValid"); 
+const btnCloseModalValid = document.querySelector(".btn-closeModal"); 
 
-btnCloseModalValid.addEventListener("click", closeModalValid); //Ecoute le click sur le bouton de fermeture et déclenchement de la fonction closeModalValid
+btnCloseModalValid.addEventListener("click", closeModalValid); 
 function closeModalValid() {
   formValid.style.display = "none"; //Effacement du formulaire validé
   modalbg.style.display = "none"; //Effacement de la modale

@@ -5,6 +5,7 @@
   position: relative;
   position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 4;
@@ -14,8 +15,9 @@
   width: 100%;
   overflow: auto;
   background-color: rgb(0, 0, 0);
-  & h4{
+  & h4, & p{
     text-align: center;
   font-size: xxx-large;
   }
+
 }

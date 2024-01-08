@@ -11,8 +11,8 @@
     text-decoration: none;
     font-size: 1.25rem;
     font-family: Roboto, sans-serif;
-    &:active,
-    &:hover {
+    &:hover,&:focus
+     {
       background-color: #fe142f;
       color: #ffffff;
       border-radius: 0.5rem;

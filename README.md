@@ -43,6 +43,23 @@ Votre mission est de reprendre le projet de refonte du frontend commencer par un
 3. Il n'y a aucune dépendance.
 4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
 
+### Cahier des charges
+
+- Le site doit être fait en JavaScript sans jQuery.
+- Le HTML, le CSS et le JavaScript doivent être séparés.
+- Le code doit être sémantiquement correct et ne doit contenir aucune erreur au validateur W3C.
+- Le site doit être compatible avec les dernières versions de Chrome et Firefox.
+- Le code doit être forké depuis le repo GitHub.
+- Le code doit être commenté (décrire chaque fonction, ainsi que les parties du code qui nécessitent plus de détails).
+- Des tests manuels doivent être effectués sur les fonctionnalités, les entrées de formulaire et l'affichage responsive.
+
+### Éléments fournis
+
+1. La [maquette](https://www.figma.com/file/prxFGnSUoEhk6PTcMaJQim/UI-Design-GameOn-EN?node-id=0%3A1) qui est déjà intégrée.
+2. Le [repo](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR) avec le code qui à déjà été complété.
+3. Les [images et les fonts](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/tree/master/starterOnly) présentes dans la maquette.
+4. Les [issues](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues) du repo GitHub qui décrivent ce qu'il reste à faire.
+
 ## Built with
 
 <p> </p>

@@ -7,7 +7,7 @@
 <div align="center">
   <h1>GameOn</h1>
   <a href="https://github.com/Erik-42">
-    <img src="./assets/img/HomePage.png" alt="Bannière GameOn" width="300" height="200">
+    <img src="./assets/img/HomePage.webp" alt="Bannière GameOn" width="300" height="200">
   </a>
 </div>
 

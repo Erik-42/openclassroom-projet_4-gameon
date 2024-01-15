@@ -163,7 +163,8 @@ function addError(input, message) {
 // Suppression des erreurs en recuperant l'input concerné
 function clearError(input) {
   const formData = input.parentElement; 
-  formData.setAttribute("data-error-visible", false); 
+  formData.setAttribute("data-error-visible", false);
+  formData.setAttribute("data-error", ""); 
 }
 
 // Soumission du formulaire //
